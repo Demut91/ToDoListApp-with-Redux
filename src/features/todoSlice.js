@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-  todolist: [],
+  todoList: [],
 };
 
 const todoSlice = createSlice ({
@@ -9,10 +9,12 @@ const todoSlice = createSlice ({
   initialState,
   reducers: {
       saveTodo: (state, action) => {
-          state.todolist.push(action.payload)
-      }
+          state.todoList.push(action.payload)
+      },
+
   },
 });
 
 export const { saveTodo } = todoSlice.actions;
+export const selectTodoList = state => state.todos.todoList
 export default todoSlice.reducer;
