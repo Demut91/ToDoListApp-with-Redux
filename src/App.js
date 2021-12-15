@@ -11,13 +11,13 @@ import { selectTodoList } from './features/todoSlice';
 function App () {
   const todoList = useSelector(selectTodoList)
   return (
-    <div className="App">
+    <div className="app">
       <div className="app__container" >
       <div className="app__todoContainer" >
         {
           todoList.map(item=> (
             <TodoItem 
-           
+            key={item.id}
             name={item.item}
             done={item.done}
             id={item.id}/>
