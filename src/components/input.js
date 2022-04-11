@@ -9,7 +9,7 @@ const Input = () => {
   const dispatch = useDispatch ();
 
   const addTodo = () => {
-   
+    if (input !== '') {
       dispatch (
         saveTodo ({
           item: input,
@@ -17,8 +17,8 @@ const Input = () => {
           id: Date.now (),
         })
       );
-     
-    
+      setInput ('');
+    }
   };
 
   return (
